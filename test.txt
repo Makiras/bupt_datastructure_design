@@ -1,0 +1,8 @@
+g++ -D_WIN32_WINNT=0x0601 \
+    -I"C:\Program Files\mingw-w64\x86_64-9.2.0\MinGW\include" \
+    -L"C:\Program Files\mingw-w64\x86_64-9.2.0\MinGW\lib" \
+    main.cpp interface.cpp algorithm.cpp  model.cpp config.cpp \
+    -o opt -std=c++17 \
+    -lwsock32 -lws2_32 -lmswsock -lboost_system 
+
+curl.exe http://127.0.0.1:8080/person -X POST -d "p_name=测试玩家&p_start=0&p_end=3&p_start_time=6"
